@@ -11,10 +11,9 @@ define [
   React.createClass
     render: ->
       `<Nav bsStyle="pills">
-        <NavItem>
-          <Link href="/" >Home</Link>
+        <NavItem href="/about"> Title
         </NavItem>
-        <NavItem>
-          <Link href="/hello" >Hello</Link>
+        <NavItem href="/hello">
+        Hello
         </NavItem>
       </Nav>`

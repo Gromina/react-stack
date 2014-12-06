@@ -18,6 +18,13 @@ requirejs.config
     '_o':                       'prelude/_o'
     '_s':                       'prelude/_s'
     '_n':                       'prelude/_n'
+  shim:
+    'react':
+      exports: 'React'
+    'react-router':
+      deps:    ['react']
+      exports: 'ReactRouter'
 
-require ['prelude-ls', 'react', './router'], () ->
+require ['prelude-ls', 'react', './router'], (pr,react,router) ->
   console.log 'started'
+  router()
