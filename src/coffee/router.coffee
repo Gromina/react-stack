@@ -2,18 +2,21 @@
 
 define [
   'react'
-  'react-router-component'
+  'react-router'
   'views/navbar'
   'views/composite'
   'views/hello'
 ], (React, Router, Navbar, Composite, Hello)->
-  { Location, Locations } = Router
+  {Route, DefaultRoute} = Router
+  routes = `(
+    <Route handler={Composite} path="/">
+    <DefaultRoute handler={Composite} />
+    <Route name="about" handler={Composite} />
+    <Route name="hello" handler={Hello}/>
+    </Route>
+  )`;
 
-  React.renderComponent(
-    `<div className="container">
-      <Navbar />
-      <Locations>
-        <Location path="/" handler={ Composite } />
-        <Location path="/hello" handler={ Hello } />
-      </Locations>
-    </div>`, document.body)
+  Router.run routes, Router.HistoryLocation, (Handler) ->
+    React.render(`<Handler/>`, document.body)
+    return ;
+  return ;

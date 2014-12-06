@@ -2,7 +2,7 @@
 
 define [
   'react'
-  'react-router-component'
+  'react-router'
   'react-bootstrap/Nav'
   'react-bootstrap/NavItem'
 ], (React, Router, Nav, NavItem)->

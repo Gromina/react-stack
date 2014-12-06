@@ -2,9 +2,8 @@ requirejs.config
   baseUrl: './js'
 
   paths:
-    'react':                    '../components/react/react-with-addons'
     'react-async':              '../components/react-async/react-async'
-    'react-router-component':   '../components/react-router-component/react-router-component'
+    'react-router':             '../components/react-router/dist/react-router'
     'react-bootstrap':          '../components/react-bootstrap'
     'q':                        '../components/q/q'
     'pajamas':                  '../components/pajamas/dist/pajamas'
@@ -20,5 +19,5 @@ requirejs.config
     '_s':                       'prelude/_s'
     '_n':                       'prelude/_n'
 
-require ['prelude-ls', './router'], () ->
+require ['prelude-ls', 'react', './router'], () ->
   console.log 'started'
